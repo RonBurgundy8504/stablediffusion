@@ -1,0 +1,5 @@
+model = my_model(layers=3, drop_rate=0)
+trainer = pl.Trainer()
+chk_path = "/path_to_checkpoint/yiffy-e18.ckpt"
+model2 = my_model.load_from_checkpoint(chk_path)
+results = trainer.test(model=model2, datamodule=my_datamodule, verbose=True)
